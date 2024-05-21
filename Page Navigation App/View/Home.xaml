@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Page_Navigation_App.View.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Page_Navigation_App.View"
+             mc:Ignorable="d"
+             d:DesignHeight="600"
+             d:DesignWidth="622">
+    
+    <StackPanel Height="400"
+                Width="500">
+        <TextBlock Text="Discover"
+                   Foreground="White"
+                   FontSize="20"
+                   HorizontalAlignment="Left"
+                   Margin="0,0,0,40"/>
+
+        <StackPanel Orientation="Horizontal">
+            <Border Width="400"
+                    Height="200">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#24C1E5" Offset="0.0"/>
+                        <GradientStop Color="#24C1E5" Offset="0.0"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,400,200"/>
+                </Border.Clip>
+
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="Water Quality Detection"
+                                   Foreground="white"
+                                   FontSize="28"
+                                   Margin="20,10,10,0"/>
+                        <TextBlock Text="Test your water Now !"
+                                    Foreground="white"
+                                    FontSize="18"
+                                    Margin="20,10,10,0"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </StackPanel>
+
+    
+</UserControl>
