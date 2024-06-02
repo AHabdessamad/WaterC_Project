@@ -4,22 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Page_Navigation_App.Model;
+using Page_Navigation_App.Utilities;
 
 namespace Page_Navigation_App.ViewModel
 {
-    class AboutVM : Utilities.ViewModelBase
+    class AboutVM : ViewModelBase
     {
-        private readonly PageModel _pageModel;
-        public bool Settings
-        {
-            get { return _pageModel.LocationStatus; }
-            set { _pageModel.LocationStatus = value; OnPropertyChanged(); }
-        }
-
-        public AboutVM()
-        {
-            _pageModel = new PageModel();
-            Settings = true;
-        }
+      
     }
 }

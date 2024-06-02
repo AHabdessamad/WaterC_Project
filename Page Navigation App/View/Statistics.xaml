@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:vm="clr-namespace:Page_Navigation_App.ViewModel"
+             xmlns:vm="clr-namespace:Page_Navigation_App.ViewModel" xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
              mc:Ignorable="d"
              d:DesignHeight="600"
              d:DesignWidth="622"
@@ -12,35 +12,18 @@
     <UserControl.DataContext>
         <vm:StatisticsVM />
     </UserControl.DataContext>
-    
-    <Grid Margin="15">
 
-        <Border CornerRadius="0,20,20,0">
-            <Border.Background>
-                <ImageBrush ImageSource="C:\Users\Abdessamad AIT HAMOU\Desktop\IoT_Project\Source Code\IoT_Project\Page Navigation App\Images\img_chart.png"
-                            Stretch="None" />
-            </Border.Background>
-        </Border>
 
-        <Grid>
+    <StackPanel Height="550"
+                Width="500" >
+        <TextBlock Text="Statistics Chart"
+                   Foreground="White"
+                   FontSize="24"
+                   HorizontalAlignment="center"
+                   Margin="0,40,0,40"/>
+   
 
-            <TextBlock Text="Expected Delivery  :"
-                       Foreground="#DBDBDB"
-                       FontSize="12"
-                       HorizontalAlignment="Right"
-                       VerticalAlignment="Bottom"
-                       FontFamily="/Fonts/#Rubik Medium"
-                       Margin="0,0,130,100" />
+        <lvc:PieChart Series="{Binding Series}" Width="400" Height="400" InitialRotation="-80"/>
+    </StackPanel>
 
-            <TextBlock Text="{Binding ShipmentTracking}"
-                       Foreground="#CED565"
-                       FontSize="12"
-                       HorizontalAlignment="Right"
-                       VerticalAlignment="Bottom"
-                       FontFamily="/Fonts/#Rubik Medium"
-                       Margin="0,0,72,100" />
-
-        </Grid>
-        
-    </Grid>
 </UserControl>

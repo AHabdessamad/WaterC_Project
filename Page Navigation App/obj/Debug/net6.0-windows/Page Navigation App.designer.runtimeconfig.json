@@ -13,9 +13,11 @@
     ],
     "additionalProbingPaths": [
       "C:\\Users\\Abdessamad AIT HAMOU\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Abdessamad AIT HAMOU\\.nuget\\packages"
+      "C:\\Users\\Abdessamad AIT HAMOU\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
     ],
     "configProperties": {
+      "System.Reflection.NullabilityInfoContext.IsSupported": true,
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
     }
   }

@@ -12,7 +12,7 @@
         xmlns:vm="clr-namespace:Page_Navigation_App.ViewModel"
         xmlns:Menu="clr-namespace:Page_Navigation_App.Utilities"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title="MainWindow"  Icon="C:\Users\Abdessamad AIT HAMOU\Desktop\IoT_Project\Source Code\IoT_Project\Page Navigation App\Images\WaterC_logo.png"
         Height="600"
         Width="850"
         AllowsTransparency="True"
@@ -86,7 +86,7 @@
                     <!--// IoT //-->
 
                     <Menu:Btn Style="{StaticResource BtnStyle}"
-                              Command="{Binding CustomersCommand}">
+                              Command="{Binding TestCommand}">
 
                         <Grid>
 
@@ -103,7 +103,7 @@
                     <!--// Archive //-->
 
                     <Menu:Btn Style="{StaticResource BtnStyle}"
-                              Command="{Binding ProductsCommand}">
+                              Command="{Binding ArchiveCommand}">
 
                         <Grid>
 
@@ -124,7 +124,7 @@
                     <!--// Statistic //-->
 
                     <Menu:Btn Style="{StaticResource BtnStyle}"
-                              Command="{Binding TransactionsCommand}">
+                              Command="{Binding StatisticsCommand}">
 
                         <Grid>
 
@@ -142,7 +142,7 @@
                     <!--// About //-->
 
                     <Menu:Btn Style="{StaticResource BtnStyle}"
-                              Command="{Binding SettingsCommand}">
+                              Command="{Binding AboutCommand}">
 
                         <Grid>
 

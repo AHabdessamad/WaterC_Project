@@ -5,11 +5,20 @@
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Abdessamad AIT HAMOU\.nuget\packages\</NuGetPackageFolders>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Abdessamad AIT HAMOU\.nuget\packages\;C:\Program Files (x86)\Progress\ToolboxNuGetPackages</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.9.2</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\Abdessamad AIT HAMOU\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Progress\ToolboxNuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\6.0.9\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\6.0.9\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgTelerik_Windows_Controls_for_Wpf_Trial Condition=" '$(PkgTelerik_Windows_Controls_for_Wpf_Trial)' == '' ">C:\Users\Abdessamad AIT HAMOU\.nuget\packages\telerik.windows.controls.for.wpf.trial\2024.2.514</PkgTelerik_Windows_Controls_for_Wpf_Trial>
+    <PkgTelerik_Windows_Controls_Chart_for_Wpf_Trial Condition=" '$(PkgTelerik_Windows_Controls_Chart_for_Wpf_Trial)' == '' ">C:\Users\Abdessamad AIT HAMOU\.nuget\packages\telerik.windows.controls.chart.for.wpf.trial\2024.2.514</PkgTelerik_Windows_Controls_Chart_for_Wpf_Trial>
+    <PkgTelerik_UI_for_Wpf_60_Xaml_Trial Condition=" '$(PkgTelerik_UI_for_Wpf_60_Xaml_Trial)' == '' ">C:\Program Files (x86)\Progress\ToolboxNuGetPackages\telerik.ui.for.wpf.60.xaml.trial\2024.2.514</PkgTelerik_UI_for_Wpf_60_Xaml_Trial>
+  </PropertyGroup>
 </Project>

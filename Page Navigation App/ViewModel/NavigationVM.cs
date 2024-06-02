@@ -27,7 +27,7 @@ namespace Page_Navigation_App.ViewModel
         private void Home(object obj) => CurrentView = new HomeVM();
         private void Test(object obj) => CurrentView = new TestVM();
         private void Archive(object obj) => CurrentView = new ArchiveVM();
-        private void Statistics(object obj) => CurrentView = new ArchiveVM();
+        private void Statistics(object obj) => CurrentView = new StatisticsVM();
         private void About(object obj) => CurrentView = new AboutVM();
 
 

@@ -4,22 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Page_Navigation_App.Model;
+using Page_Navigation_App.Utilities;
 
 namespace Page_Navigation_App.ViewModel
 {
-    class ArchiveVM : Utilities.ViewModelBase
+    class ArchiveVM : ViewModelBase
     {
-        private readonly PageModel _pageModel;
-        public DateOnly DisplayOrderDate
-        {
-            get { return _pageModel.OrderDate; }
-            set { _pageModel.OrderDate = value; OnPropertyChanged(); }
-        }
-
-        public ArchiveVM()
-        {
-            _pageModel = new PageModel();
-            DisplayOrderDate = DateOnly.FromDateTime(DateTime.Now);
-        }
+      
     }
 }

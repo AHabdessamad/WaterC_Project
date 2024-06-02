@@ -3,24 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView.Extensions;
+using LiveChartsCore.SkiaSharpView.Painting;
 using Page_Navigation_App.Model;
+using Page_Navigation_App.Utilities;
+using SkiaSharp;
 
 namespace Page_Navigation_App.ViewModel
 {
-    class StatisticsVM : Utilities.ViewModelBase
+    class StatisticsVM : ViewModelBase
     {
-        private readonly PageModel _pageModel;
-        public TimeOnly ShipmentTracking
-        {
-            get { return _pageModel.ShipmentDelivery; }
-            set { _pageModel.ShipmentDelivery = value; OnPropertyChanged(); }
-        }
+        public StatisticsVM(){
+        var outer = 0;
+        var data = new[] { 6, 5, 4, 3 };
 
-        public StatisticsVM()
+        // you can convert any array, list or IEnumerable<T> to a pie series collection:
+        Series = data.AsPieSeries((value, series) =>
         {
-            _pageModel = new PageModel();
-            TimeOnly time = TimeOnly.FromDateTime(DateTime.Now);
-            ShipmentTracking = time;
-        }
+           
+            series.OuterRadiusOffset = outer;
+            outer += 50;
+
+            series.DataLabelsPaint = new SolidColorPaint(SKColors.White)
+        {
+            SKTypeface = SKTypeface.FromFamilyName("Arial", SKFontStyle.Bold)
+            };
+            
+                series.ToolTipLabelFormatter =
+                point =>
+                {
+                    var pv = point.Coordinate.PrimaryValue;
+                    var sv = point.StackedValue!;
+
+                    var a = $"{pv}/{sv.Total}{Environment.NewLine}{sv.Share:P2}";
+                    return a;
+                };
+
+                     series.DataLabelsFormatter =
+                point =>
+                {
+                    var pv = point.Coordinate.PrimaryValue;
+                    var sv = point.StackedValue!;
+                    
+
+                    var a = $"{pv}/{sv.Total}{Environment.NewLine}{sv.Share:P2}";
+                    return a;
+                };
+        });
     }
+
+    public IEnumerable<ISeries> Series { get; set; }
+}
 }
